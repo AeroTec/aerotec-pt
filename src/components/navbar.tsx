@@ -24,7 +24,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/placeholder.svg?height=40&width=40"
+              src="/aerotec_globo.png"
               alt="AeroTéc Logo"
               width={40}
               height={40}
@@ -80,13 +80,13 @@ export default function Navbar() {
 
           {/* Social Icons */}
           <div className="hidden md:flex items-center space-x-3">
-            <Link href="#" aria-label="Facebook">
+            <Link href="https://www.facebook.com/AeroTecnico/?ref=br_rs" target="_blank" aria-label="Facebook">
               <Facebook
                 size={18}
                 className="hover:text-[#00a0e4] transition-colors"
               />
             </Link>
-            <Link href="#" aria-label="Instagram">
+            <Link href="https://www.instagram.com/aero.tec/" target="_blank" aria-label="Instagram">
               <Instagram
                 size={18}
                 className="hover:text-[#00a0e4] transition-colors"
@@ -98,13 +98,13 @@ export default function Navbar() {
                 className="hover:text-[#00a0e4] transition-colors"
               />
             </Link>
-            <Link href="#" aria-label="LinkedIn">
+            <Link href="https://www.linkedin.com/company/aerotec-ist/" target="_blank" aria-label="LinkedIn">
               <Linkedin
                 size={18}
                 className="hover:text-[#00a0e4] transition-colors"
               />
             </Link>
-            <Link href="#" aria-label="YouTube">
+            <Link href="https://www.youtube.com/channel/UCrTrDSNaMf44AtJlgar5Agw" target="_blank" aria-label="YouTube">
               <Youtube
                 size={18}
                 className="hover:text-[#00a0e4] transition-colors"
@@ -185,19 +185,19 @@ export default function Navbar() {
 
             {/* Social Icons for Mobile */}
             <div className="flex items-center space-x-4 pt-2">
-              <Link href="#" aria-label="Facebook">
+              <Link href="https://www.facebook.com/AeroTecnico/?ref=br_rs" aria-label="Facebook">
                 <Facebook size={20} />
               </Link>
-              <Link href="#" aria-label="Instagram">
+              <Link href="https://www.instagram.com/aero.tec/" aria-label="Instagram">
                 <Instagram size={20} />
               </Link>
               <Link href="#" aria-label="Email">
                 <Mail size={20} />
               </Link>
-              <Link href="#" aria-label="LinkedIn">
+              <Link href="https://www.linkedin.com/company/aerotec-ist/" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </Link>
-              <Link href="#" aria-label="YouTube">
+              <Link href="https://www.youtube.com/channel/UCrTrDSNaMf44AtJlgar5Agw" aria-label="YouTube">
                 <Youtube size={20} />
               </Link>
               <button aria-label="Toggle theme">

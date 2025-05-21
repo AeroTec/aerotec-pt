@@ -104,7 +104,7 @@ export default function Footer() {
             <h3 className="text-2xl font-bold mb-6">Contactos</h3>
             <p className="text-gray-400 mb-6">Podes entrar em contacto connosco através de:</p>
             <div className="flex space-x-6">
-              <Link href="#" aria-label="Facebook" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="https://www.facebook.com/AeroTecnico/?ref=br_rs" target="_blank" aria-label="Facebook" className="text-gray-400 hover:text-white transition-colors">
                 <Facebook size={24} />
               </Link>
               <Link href="#" aria-label="Instagram" className="text-gray-400 hover:text-white transition-colors">
@@ -113,10 +113,10 @@ export default function Footer() {
               <Link href="#" aria-label="Email" className="text-gray-400 hover:text-white transition-colors">
                 <Mail size={24} />
               </Link>
-              <Link href="#" aria-label="LinkedIn" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="https://www.linkedin.com/company/aerotec-ist/" target="_blank" aria-label="LinkedIn" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin size={24} />
               </Link>
-              <Link href="#" aria-label="YouTube" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="https://www.youtube.com/channel/UCrTrDSNaMf44AtJlgar5Agw" target="_blank" aria-label="YouTube" className="text-gray-400 hover:text-white transition-colors">
                 <Youtube size={24} />
               </Link>
             </div>
@@ -125,27 +125,33 @@ export default function Footer() {
 
         {/* Logos */}
         <div className="mt-16 flex flex-wrap justify-center gap-12 items-center">
-          <Image
-            src="/placeholder.svg?height=60&width=120"
-            alt="Técnico Lisboa Logo"
-            width={120}
-            height={60}
-            className="object-contain"
-          />
-          <Image
-            src="/placeholder.svg?height=60&width=180"
-            alt="AeroTéc Logo"
-            width={180}
-            height={60}
-            className="object-contain"
-          />
-          <Image
-            src="/placeholder.svg?height=60&width=120"
-            alt="Partner Logo"
-            width={120}
-            height={60}
-            className="object-contain"
-          />
+          <Link href= "https://tecnico.ulisboa.pt/pt/" target = "_blank">
+            <Image
+              src="/images/tecnico_white.png"
+              alt="Técnico Lisboa Logo"
+              width={300}
+              height={170}
+              className="object-contain"
+            />
+          </Link>
+          <Link href= "/">
+            <Image
+              src="/images/aerotec_branco.png"
+              alt="AeroTéc Logo"
+              width={300}
+              height={170}
+              className="object-contain"
+            />
+          </Link>
+          <Link href= "https://euroavia.eu/" target = "_blank">
+            <Image
+              src="/images/euroavia_white_logo.png"
+              alt="Partner Logo"
+              width={300}
+              height={170}
+              className="object-contain"
+            />
+          </Link>
         </div>
       </div>
     </footer>

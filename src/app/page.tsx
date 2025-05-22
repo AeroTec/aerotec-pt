@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col">
       <Navbar />
-      <div className="flex-grow bg-[#001333] text-white py-12">
+      <div className= /*"flex-grow bg-[#001333] text-white py-12"*/ "flex-grow bg-[#001333] text-white pt-20 pb-12">
         <div className="container mx-auto px-4 md:px-6 max-w-5xl">
           <div className="bg-[#1a1a1a] p-8 rounded-lg">
             <h2 className="text-2xl font-bold mb-6 text-center">Mensagem da Presidente</h2>

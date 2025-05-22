@@ -18,7 +18,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[#001333] text-white">
+    <header className=/*"bg-[#001333] text-white"*/"fixed top-0 left-0 w-full z-50 bg-[#001333] text-white shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}

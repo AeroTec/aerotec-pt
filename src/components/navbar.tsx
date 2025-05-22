@@ -41,6 +41,8 @@ export default function Navbar() {
       }
 
       // Agora procuramos a seção mais próxima visível entre as conhecidas
+      const viewportCenter = window.innerHeight / 2;
+
       let closestSectionId: string | null = null;
       let closestDistance = Infinity;
 
@@ -49,11 +51,11 @@ export default function Navbar() {
         if (!el) continue;
 
         const rect = el.getBoundingClientRect();
+        const sectionCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(viewportCenter - sectionCenter);
 
         // Se a secção estiver visível (um pouco dentro do viewport)
         if (rect.bottom > 50 && rect.top < window.innerHeight - 50) {
-          const distance = Math.abs(rect.top);
-
           if (distance < closestDistance) {
             closestDistance = distance;
             closestSectionId = id;
@@ -75,7 +77,7 @@ export default function Navbar() {
 
     return () => window.removeEventListener("scroll", onScroll);
   }, [sectionIds]);
-  
+
 
   return (
     <header

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -16,9 +16,24 @@ import {
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolledPastPhoto, setScrolledPastPhoto] = useState(false);
+
+  useEffect(() => {
+    function handleScroll() {
+      setScrolledPastPhoto(window.scrollY > 400); // altura da foto, ajustar conforme o tamanho da mesma
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className=/*"bg-[#001333] text-white"*/"fixed top-0 left-0 w-full z-50 bg-[#001333] text-white shadow-md">
+    <header
+      className={`fixed top-0 left-0 w-full z-50 text-white shadow-md transition-colors duration-300 ${
+        scrolledPastPhoto ? "bg-[#001333]" : "bg-transparent"
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -80,13 +95,21 @@ export default function Navbar() {
 
           {/* Social Icons */}
           <div className="hidden md:flex items-center space-x-3">
-            <Link href="https://www.facebook.com/AeroTecnico/?ref=br_rs" target="_blank" aria-label="Facebook">
+            <Link
+              href="https://www.facebook.com/AeroTecnico/?ref=br_rs"
+              target="_blank"
+              aria-label="Facebook"
+            >
               <Facebook
                 size={18}
                 className="hover:text-[#00a0e4] transition-colors"
               />
             </Link>
-            <Link href="https://www.instagram.com/aero.tec/" target="_blank" aria-label="Instagram">
+            <Link
+              href="https://www.instagram.com/aero.tec/"
+              target="_blank"
+              aria-label="Instagram"
+            >
               <Instagram
                 size={18}
                 className="hover:text-[#00a0e4] transition-colors"
@@ -98,13 +121,21 @@ export default function Navbar() {
                 className="hover:text-[#00a0e4] transition-colors"
               />
             </Link>
-            <Link href="https://www.linkedin.com/company/aerotec-ist/" target="_blank" aria-label="LinkedIn">
+            <Link
+              href="https://www.linkedin.com/company/aerotec-ist/"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
               <Linkedin
                 size={18}
                 className="hover:text-[#00a0e4] transition-colors"
               />
             </Link>
-            <Link href="https://www.youtube.com/channel/UCrTrDSNaMf44AtJlgar5Agw" target="_blank" aria-label="YouTube">
+            <Link
+              href="https://www.youtube.com/channel/UCrTrDSNaMf44AtJlgar5Agw"
+              target="_blank"
+              aria-label="YouTube"
+            >
               <Youtube
                 size={18}
                 className="hover:text-[#00a0e4] transition-colors"

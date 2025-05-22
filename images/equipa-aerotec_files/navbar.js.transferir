@@ -1,0 +1,216 @@
+var this_js_script = $('script[src*=navbar]');
+/* muda cor da navbar para branco quando se faz o scroll */
+
+$(window).scroll(function(){
+    if (this_js_script != null){
+        var scroll_size = this_js_script.attr('data-scroll_size');
+        $('nav').toggleClass('scrolled', $(window).scrollTop() > scroll_size); 
+        
+        /*var lastScroll = $(window).scrollTop();
+        console.log(lastScroll);*/
+    }
+
+});
+/*
+var scroll_size = this_js_script.attr('data-scroll_size');
+var myNav = document.getElementById('mainNav');
+window.onscroll = function () { 
+    "use strict";
+    if (window.scrollY >= scroll_size ) {
+        myNav.classList.add("scrolled");
+    } 
+    else {
+        myNav.classList.remove("scrolled");
+    }
+};*/
+
+/* muda cor dos dropdowns para branco quando se faz o scroll */
+$(window).scroll(function() {    
+var scroll = $(window).scrollTop();
+var scroll_size = this_js_script.attr('data-scroll_size'); 
+var darkbluetextSITES = document.getElementById('darkbluetitle');
+var darkbluetextHOME = document.getElementById('MensagemDoPresi');
+
+if (darkbluetextSITES == null && darkbluetextHOME != null){ /* estamos na home */
+    if (darkbluetextHOME.classList.contains('testemunhoboxGrandeDARK')){ /* coloca dark mode*/
+        document.getElementById("Drop2").classList.remove('back2');
+        document.getElementById("Drop").classList.remove('back2');
+        if (scroll >= scroll_size) { /* add fundo */
+                document.getElementById("Drop").classList.remove('back1');
+                document.getElementById("Drop").classList.add('backDARKMODE');
+                document.getElementById("Drop2").classList.remove('back1');
+                document.getElementById("Drop2").classList.add('backDARKMODE');
+                
+            }else { /* remove fundo */
+                document.getElementById("Drop").classList.remove('backDARKMODE');
+                document.getElementById("Drop").classList.add('back1');
+                document.getElementById("Drop2").classList.remove('backDARKMODE');
+                document.getElementById("Drop2").classList.add('back1');
+            } 
+        }else { /* coloca normal mode*/
+            document.getElementById("Drop2").classList.remove('backDARKMODE');
+            document.getElementById("Drop").classList.remove('backDARKMODE');
+            if (scroll >= scroll_size) { /* add fundo */
+                document.getElementById("Drop").classList.remove('back1');
+                document.getElementById("Drop").classList.add('back2');
+                document.getElementById("Drop2").classList.remove('back1');
+                document.getElementById("Drop2").classList.add('back2');
+            }else { /* remove fundo */
+                document.getElementById("Drop").classList.remove('back2');
+                document.getElementById("Drop").classList.add('back1');
+                document.getElementById("Drop2").classList.remove('back2');
+                document.getElementById("Drop2").classList.add('back1');
+            }
+        }
+
+}else if (darkbluetextSITES != null && darkbluetextHOME == null){  /* estamos nos sites */
+    if (darkbluetextSITES.classList.contains('whitetitle')){ /* coloca dark mode*/
+        document.getElementById("Drop2").classList.remove('back2');
+        document.getElementById("Drop").classList.remove('back2');
+        if (scroll >= scroll_size) { /* add fundo */
+                document.getElementById("Drop").classList.remove('back1');
+                document.getElementById("Drop").classList.add('backDARKMODE');
+                document.getElementById("Drop2").classList.remove('back1');
+                document.getElementById("Drop2").classList.add('backDARKMODE');
+            }else { /* remove fundo */
+                document.getElementById("Drop").classList.remove('backDARKMODE');
+                document.getElementById("Drop").classList.add('back1');
+                document.getElementById("Drop2").classList.remove('backDARKMODE');
+                document.getElementById("Drop2").classList.add('back1');
+            }
+        }else { /* coloca normal mode*/
+            document.getElementById("Drop2").classList.remove('backDARKMODE');
+            document.getElementById("Drop").classList.remove('backDARKMODE');
+            if (scroll >= scroll_size) { /* add fundo */
+                document.getElementById("Drop").classList.remove('back1');
+                document.getElementById("Drop").classList.add('back2');
+                document.getElementById("Drop2").classList.remove('back1');
+                document.getElementById("Drop2").classList.add('back2');
+                document.getElementById("Drop2").classList.remove('backDARKMODE');
+                document.getElementById("Drop").classList.remove('backDARKMODE');
+            }else { /* remove fundo */
+                document.getElementById("Drop").classList.remove('back2');
+                document.getElementById("Drop").classList.add('back1');
+                document.getElementById("Drop2").classList.remove('back2');
+                document.getElementById("Drop2").classList.add('back1');
+                document.getElementById("Drop2").classList.remove('backDARKMODE');
+                document.getElementById("Drop").classList.remove('backDARKMODE');
+            }
+        }
+}else {/* coloca normal mode em caso de erro */
+    document.getElementById("Drop2").classList.remove('backDARKMODE');
+    document.getElementById("Drop").classList.remove('backDARKMODE');
+    if (scroll >= scroll_size) { /* add fundo */
+        document.getElementById("Drop").classList.remove('back1');
+        document.getElementById("Drop").classList.add('back2');
+        document.getElementById("Drop2").classList.remove('back1');
+        document.getElementById("Drop2").classList.add('back2');
+    }else { /* remove fundo */
+        document.getElementById("Drop").classList.remove('back2');
+        document.getElementById("Drop").classList.add('back1');
+        document.getElementById("Drop2").classList.remove('back2');
+        document.getElementById("Drop2").classList.add('back1');
+    }
+}
+});
+
+	/*Faz a tooltip (texto dos icones em projetos) aparecer logo que acontece o hover*/
+$('.zoom').tooltip({show: {effect:"none", delay:0}});
+
+/* muda o fundo do collapsable quando for aberto */
+function navBarCollapsedBackground(){
+    if (document.getElementById("mainNav").classList.contains('back3')){
+    	document.getElementById("mainNav").classList.remove('back3');
+    } else{
+        document.getElementById("mainNav").classList.add('back3');
+     } 
+}
+
+function dropdownMobile(){
+    if (document.getElementById("dropdownMobile").classList.contains('dropdown-mobile-invisible')){
+        document.getElementById("dropdownMobile").classList.remove('dropdown-mobile-invisible');
+        document.getElementById("dropdownMobile").classList.add('dropdown-mobile-visible');
+        document.getElementById("navbarDropdown").classList.add('rotate180');
+
+    } else{
+        document.getElementById("dropdownMobile").classList.remove('dropdown-mobile-visible');
+        document.getElementById("dropdownMobile").classList.add('dropdown-mobile-invisible');
+        document.getElementById("navbarDropdown").classList.remove('rotate180');
+    } 
+}
+
+function dropdownMobile2(){
+    if (document.getElementById("dropdownMobile2").classList.contains('dropdown-mobile-invisible')){
+        document.getElementById("dropdownMobile2").classList.remove('dropdown-mobile-invisible');
+        document.getElementById("dropdownMobile2").classList.add('dropdown-mobile-visible');
+        document.getElementById("navbarDropdown2").classList.add('rotate180');
+
+    } else{
+        document.getElementById("dropdownMobile2").classList.remove('dropdown-mobile-visible');
+        document.getElementById("dropdownMobile2").classList.add('dropdown-mobile-invisible');
+        document.getElementById("navbarDropdown2").classList.remove('rotate180');
+    } 
+}
+
+function dropdownNewsMobile(){
+    if (document.getElementById("dropdownNewsMobile").classList.contains('dropdown-mobile-invisible')){
+        document.getElementById("dropdownNewsMobile").classList.remove('dropdown-mobile-invisible');
+        document.getElementById("dropdownNewsMobile").classList.add('dropdown-mobile-visible');
+        document.getElementById("navbarNewsDropdown").classList.add('rotate180');
+
+    } else{
+        document.getElementById("dropdownNewsMobile").classList.remove('dropdown-mobile-visible');
+        document.getElementById("dropdownNewsMobile").classList.add('dropdown-mobile-invisible');
+        document.getElementById("navbarNewsDropdown").classList.remove('rotate180');
+    } 
+}
+
+/* DARK MODE */
+function darkModeNavbar(){
+    /*var navbarText = document.getElementsByClassName('page-scroll');*/
+    var navbaricons = document.getElementsByClassName('menu-social');
+    var darkbluetext = document.getElementById('darkbluetitle');
+    var navbar = document.getElementById('mainNav');
+    var this_js_script = $('script[src*=navbar]');
+        if (darkbluetext.classList.contains('whitetitle')){ /* coloca dark mode*/ 
+            for(var i = 0; i < navbarText.length ; i++){
+                navbarText[i].style.color = "white";
+            } 
+            for(var i = 0; i < navbaricons.length; i++){
+                navbaricons[i].style.color = "white";
+                navbaricons[i].style.textShadow = "none";
+            }
+            $(window).scroll(function(){
+                var scroll_size = this_js_script.attr('data-scroll_size'); 
+                $('nav').toggleClass('scrolledDARK', $(this).scrollTop() > scroll_size);
+                $('nav').removeClass("scrolled");
+            }); 
+            if (navbar.classList.contains('scrolled')){
+                navbar.classList.toggle('scrolledDARK');
+                navbar.classList.remove('scrolled');
+            }
+            document.getElementsByClassName('fa-bars')[0].style.color = "white";
+        } else{ /* coloca normal mode*/ 
+            for(var i = 0; i < navbarText.length; i++){
+                navbarText[i].style.color = "#222222";
+            } 
+            for(var i = 0; i < navbaricons.length; i++){
+                navbaricons[i].style.color = "#222222";
+                navbaricons[i].style.textShadow = "0.5px 1px grey";
+            } 
+            $(window).scroll(function(){
+                var scroll_size = this_js_script.attr('data-scroll_size'); 
+                $('nav').toggleClass('scrolled', $(this).scrollTop() > scroll_size);
+                $('nav').removeClass("scrolledDARK");
+            });
+            if (navbar.classList.contains('scrolledDARK')){
+                navbar.classList.toggle('scrolled');
+                navbar.classList.remove('scrolledDARK');
+            }
+            document.getElementsByClassName('fa-bars')[0].style.color = "#222222";
+        }  
+    /*document.getElementById("Drop").classList.toggle('backDARKMODE');
+    document.getElementById("Drop2").classList.toggle('backDARKMODE'); */      
+}
+
+

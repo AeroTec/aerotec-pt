@@ -1,0 +1,148 @@
+/*function darkmodalSITES() {
+    var body = document.body;
+    var backgroundimage = document.getElementById('headerrecrutamento');
+    if (body.classList.contains('dark-mode')){
+        /* imagem mais escura no dark mode não sei como fazer sem ser por aqui!!! manter por agora */
+       /* if (backgroundimage != null){
+            backgroundimage.classList.add('DARK-header-recrutamento2');
+        }
+    } else{
+        if (backgroundimage != null){
+            backgroundimage.classList.remove('DARK-header-recrutamento2');
+        }
+    } 
+}*/
+
+function darkmodalHOME() {
+    /*tirar a shadow que é uma classe usada noutros elementos: manter for now!!!!*/
+    var shadow_presi = document.getElementById('shadow-presi');
+    if (shadow_presi != null){
+       shadow_presi.classList.toggle("shadow");
+       document.getElementsByClassName('imgtestemunhoGrande')[0].classList.toggle("shadow");
+    }
+    // var body = document.documentElement;
+    // var backgroundimage = document.getElementById('headerrecrutamento');
+    // if (backgroundimage != null){
+    //     if (body.classList.contains('dark-mode')){
+    //         /* imagem mais escura no dark mode não sei como fazer sem ser por aqui!!! manter por agora */
+    //             backgroundimage.classList.add('DARK-header-recrutamento2');
+    //     } else{
+    //         backgroundimage.classList.remove('DARK-header-recrutamento2');
+    //     }
+    // }  
+}
+
+function imagensdarkmode() { 
+    var element = document.documentElement;
+    var logosDrop = document.getElementsByName("logosProjetosDropdown");
+    var logosProj = document.getElementsByName("logosProjetos");
+    if(element.classList.contains('dark-mode') || document.documentElement.classList.contains('dark') || window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches){ /* colocar dark mode*/
+       if(logosDrop != null){
+        logosDrop[0].src = "/img/logos/acep_semibranco.png";
+        logosDrop[3].src = "/img/logos/CIA_semibranco.png";
+        logosDrop[1].src = "/img/logos/ATLAS_branco.png";
+        logosDrop[5].src = "/img/logos/RED_semibranco.png";
+        logosDrop[6].src = "/img/logos/SA_circulo.png";
+        logosDrop[2].src = "/img/logos/Blue_contorno.png";
+        logosDrop[7].src = "/img/logos/WebDev_semibranco.png";
+        logosDrop[8].src = "/img/logos/WSRockets_semibranco.png";
+        logosDrop[9].src = "/img/logos/acep_semibranco.png";
+        logosDrop[12].src = "/img/logos/CIA_semibranco.png";
+        logosDrop[10].src = "/img/logos/ATLAS_branco.png";
+        logosDrop[14].src = "/img/logos/RED_semibranco.png";
+        logosDrop[15].src = "/img/logos/SA_circulo.png";
+        logosDrop[11].src = "/img/logos/Blue_contorno.png";
+        logosDrop[16].src = "/img/logos/WebDev_semibranco.png";
+        logosDrop[17].src = "/img/logos/WSRockets_semibranco.png";
+       }
+       if(logosProj.length != 0){ 
+        logosProj[0].src = "/img/logos/acep_semibranco.png";
+        logosProj[3].src = "/img/logos/CIA_semibranco.png";
+        logosProj[1].src = "/img/logos/ATLAS_branco.png";
+        logosProj[5].src = "/img/logos/RED_semibranco.png";
+        logosProj[6].src = "/img/logos/SA_circulo.png";
+        logosProj[2].src = "/img/logos/Blue_contorno.png";
+        logosProj[7].src = "/img/logos/WebDev_semibranco.png";
+        logosProj[8].src = "/img/logos/WSRockets_semibranco.png";
+        }
+
+    }
+    if (element.classList.contains('light')){ /* colocar light mode*/
+        if(logosDrop != null){
+            logosDrop[0].src = "/img/logos/acep_website.png";
+            logosDrop[3].src = "/img/logos/CIA.png";
+            logosDrop[1].src = "/img/logos/ATLAS_preto.png";
+            logosDrop[5].src = "/img/logos/RED_cut.png";
+            logosDrop[6].src = "/img/logos/SA_cut.png";
+            logosDrop[2].src = "/img/logos/Blue.png";
+            logosDrop[7].src = "/img/logos/WebDev_cut.png";
+            logosDrop[8].src = "/img/logos/WSRockets.png";
+            logosDrop[9].src = "/img/logos/acep_website.png";
+            logosDrop[12].src = "/img/logos/CIA.png";
+            logosDrop[10].src = "/img/logos/ATLAS_preto.png";
+            logosDrop[14].src = "/img/logos/RED_cut.png";
+            logosDrop[15].src = "/img/logos/SA_cut.png";
+            logosDrop[11].src = "/img/logos/Blue.png";
+            logosDrop[16].src = "/img/logos/WebDev_cut.png";
+            logosDrop[17].src = "/img/logos/WSRockets.png";
+        }
+        if(logosProj.length != 0){ 
+            logosProj[0].src = "/img/logos/acep_website.png";
+            logosProj[3].src = "/img/logos/CIA.png";
+            logosProj[1].src = "/img/logos/ATLAS_preto.png";
+            logosProj[5].src = "/img/logos/RED_cut.png";
+            logosProj[6].src = "/img/logos/SA_cut.png";
+            logosProj[2].src = "/img/logos/Blue.png";
+            logosProj[7].src = "/img/logos/WebDev_cut.png";
+            logosProj[8].src = "/img/logos/WSRockets.png";
+        }
+
+    }   
+}
+
+function tgldarkmode_main() { 
+    var element = document.body;
+    
+    // element.classList.toggle("dark-mode");  
+    // element.classList.toggle("light"); 
+    if (document.documentElement.classList.contains("light")) {
+        document.documentElement.classList.remove("light")
+        document.documentElement.classList.add("dark-mode")
+      } else if (document.documentElement.classList.contains("dark-mode")) {
+        document.documentElement.classList.remove("dark-mode")
+        document.documentElement.classList.add("light")
+      } else {
+        if (window?.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.classList.add("dark-mode")
+        } else {
+          document.documentElement.classList.add("light")
+        }
+      }
+    imagensdarkmode();
+}
+
+function lightdark_main() {  
+    var symbol = document.getElementById('symbol'); 
+    if (document.documentElement.classList.contains("light")) { /* está em light mode*/
+        symbol.classList.remove("fa-moon")  
+        symbol.classList.add("fa-sun")  
+    } else if (document.documentElement.classList.contains("dark-mode") || window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {   
+        symbol.classList.remove("fa-sun")   
+        symbol.classList.add("fa-moon") 
+    }  
+}  
+
+function darkmodePreferences(page) {
+    var element = document.documentElement;
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        /*element.classList.add("dark-mode");
+        element.classList.remove("light");*/
+        tgldarkmode_main();
+        lightdark_main();
+        darkmodalHOME();
+    } else {
+        // fallback
+        element.classList.add("light");
+        element.classList.remove("dark-mode");
+    }
+}

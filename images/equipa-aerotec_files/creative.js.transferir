@@ -1,0 +1,156 @@
+(function($) {
+    "use strict"; // Start of use strict
+
+    // jQuery for page scrolling feature - requires jQuery Easing plugin
+    $('a.page-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: ($($anchor.attr('href')).offset().top - 50)
+        }, 1250, 'easeInOutExpo');
+        event.preventDefault();
+    });
+
+    // Highlight the top nav as scrolling occurs
+    $('body').scrollspy({
+        target: '.navbar-fixed-top',
+        offset: 51
+    });
+
+    // Closes the Responsive Menu on Menu Item Click
+    $('.navbar-collapse ul li a').click(function() {
+        $('.navbar-toggle:visible').click();
+    });
+
+    // Offset for Main Navigation
+    $('#mainNav').affix({
+        offset: {
+            top: 100
+        }
+    })
+
+    // Initialize and Configure Scroll Reveal Animation
+    //window.sr = ScrollReveal();
+    // Changing the defaults
+    window.sr = ScrollReveal({ reset: false });
+    sr.reveal('.fa-icons', {
+        duration: 600,
+        scale: 0.3,
+        distance: '0px'
+    }, 200);
+    sr.reveal('.sr-icons', {
+        duration: 600,
+        scale: 0.3,
+        distance: '0px'
+    }, 200);
+    sr.reveal('.sr-button', {
+        duration: 1000,
+        delay: 200
+    });
+    sr.reveal('.sr-contact', {
+        duration: 600,
+        scale: 0.3,
+        distance: '0px'
+    }, 300);
+    // Customizing a reveal set
+    sr.reveal('.animar1', {
+        duration: 800,
+        scale: 0.80,
+        distance: '30px',
+        delay: 300,
+        origin: 'left'
+    }, 200);
+    sr.reveal('.animar2', {
+        duration: 800,
+        scale: 0.80,
+        distance: '30px',
+        delay: 300,
+        origin: 'right'
+    }, 200);
+    sr.reveal('.animar3', {
+        duration: 800,
+        scale: 0.8,
+        distance: '30px',
+        delay: 300,
+        origin: 'left'
+    }, 200);
+    sr.reveal('.animar3b', {
+        duration: 800,
+        scale: 0.8,
+        distance: '30px',
+        delay: 300,
+        origin: 'left'
+    }, 200);
+    sr.reveal('.animar4', {
+        duration: 800,
+        scale: 0.8,
+        distance: '30px',
+        delay: 300,
+        origin: 'right'
+    }, 200);
+    sr.reveal('.animar5', {
+        duration: 800,
+        scale: 0.8,
+        distance: '30px',
+        delay: 300,
+        origin: 'left'
+    }, 200);
+    sr.reveal('.animar6', {
+        duration: 800,
+        scale: 0.8,
+        distance: '30px',
+        delay: 300,
+        origin: 'right'
+    }, 200);
+    sr.reveal('.animar7', {
+        duration: 800,
+        scale: 0.8,
+        distance: '30px'
+    }, 200);
+    sr.reveal('.animar8', {
+        duration: 800,
+        scale: 0.8,
+        distance: '30px'
+    }, 200);
+    sr.reveal('.animar9', {
+        duration: 500,
+        scale: 0.90,
+        distance: '0px',
+        origin: 'left'
+    }, 200);
+    sr.reveal('.animar10', {
+        duration: 500,
+        scale: 0.90,
+        distance: '0px',
+        origin: 'left'
+    }, 200);
+    sr.reveal('.animar11', {
+        duration: 500,
+        scale: 0.90,
+        distance: '0px',
+        origin: 'left'
+    }, 200);
+    sr.reveal('.animar12', {
+        duration: 600,
+        scale: 0.8,
+        distance: '30px',
+        delay: 300,
+        origin: 'left'
+    }, 100);
+
+    // Initialize and Configure Magnific Popup Lightbox Plugin
+    $('.popup-gallery').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        tLoading: 'Loading image #%curr%...',
+        mainClass: 'mfp-img-mobile',
+        gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+        }
+    });
+
+})(jQuery); // End of use strict

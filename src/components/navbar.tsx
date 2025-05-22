@@ -16,23 +16,72 @@ import {
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolledPastPhoto, setScrolledPastPhoto] = useState(false);
+  const [bgColor, setBgColor] = useState("transparent");
+
+  const sectionColors: Record<string, string> = {
+    "direcao": "rgb(8,20,52)",             // azul escuro
+    "conselho-fiscal": "rgb(40,36,36)",    // cinzento escuro
+    "mesa-assembleia-geral": "rgb(8,20,52)", // azul escuro
+  };
+
+  const sectionIds = Object.keys(sectionColors);
 
   useEffect(() => {
-    function handleScroll() {
-      setScrolledPastPhoto(window.scrollY > 400); // altura da foto, ajustar conforme o tamanho da mesma
+    function onScroll() {
+      // Primeiro verificamos se estamos na zona da imagem de topo
+      // Exemplo: elemento com id "top-image" (podes ajustar o id)
+      const topImageEl = document.getElementById("top-image");
+      if (topImageEl) {
+        const rectTopImage = topImageEl.getBoundingClientRect();
+        if (rectTopImage.bottom > 0 && rectTopImage.top < window.innerHeight) {
+          // Estamos na zona da imagem de topo → background transparente
+          setBgColor("transparent");
+          return; // sair porque a imagem de topo tem prioridade
+        }
+      }
+
+      // Agora procuramos a seção mais próxima visível entre as conhecidas
+      let closestSectionId: string | null = null;
+      let closestDistance = Infinity;
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+
+        const rect = el.getBoundingClientRect();
+
+        // Se a secção estiver visível (um pouco dentro do viewport)
+        if (rect.bottom > 50 && rect.top < window.innerHeight - 50) {
+          const distance = Math.abs(rect.top);
+
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestSectionId = id;
+          }
+        }
+      }
+
+      if (closestSectionId) {
+        // Se a secção é conhecida, usa cor da secção
+        setBgColor(sectionColors[closestSectionId]);
+      } else {
+        // Se não houver secção visível (ou desconhecida), bg azul escuro por defeito
+        setBgColor("rgb(8,20,52)");
+      }
     }
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", onScroll);
+    onScroll(); // para definir cor logo ao carregar
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [sectionIds]);
+  
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 text-white shadow-md transition-colors duration-300 ${
-        scrolledPastPhoto ? "bg-[#001333]" : "bg-transparent"
-      }`}
+      style={{ backgroundColor: bgColor }}
+      className="fixed top-0 left-0 w-full z-50 text-white shadow-md transition-colors duration-300"
+      
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
@@ -116,10 +165,7 @@ export default function Navbar() {
               />
             </Link>
             <Link href="#" aria-label="Email">
-              <Mail
-                size={18}
-                className="hover:text-[#00a0e4] transition-colors"
-              />
+              <Mail size={18} className="hover:text-[#00a0e4] transition-colors" />
             </Link>
             <Link
               href="https://www.linkedin.com/company/aerotec-ist/"
@@ -142,10 +188,7 @@ export default function Navbar() {
               />
             </Link>
             <button aria-label="Toggle theme">
-              <Sun
-                size={18}
-                className="hover:text-[#00a0e4] transition-colors"
-              />
+              <Sun size={18} className="hover:text-[#00a0e4] transition-colors" />
             </button>
           </div>
 
@@ -216,19 +259,31 @@ export default function Navbar() {
 
             {/* Social Icons for Mobile */}
             <div className="flex items-center space-x-4 pt-2">
-              <Link href="https://www.facebook.com/AeroTecnico/?ref=br_rs" aria-label="Facebook">
+              <Link
+                href="https://www.facebook.com/AeroTecnico/?ref=br_rs"
+                aria-label="Facebook"
+              >
                 <Facebook size={20} />
               </Link>
-              <Link href="https://www.instagram.com/aero.tec/" aria-label="Instagram">
+              <Link
+                href="https://www.instagram.com/aero.tec/"
+                aria-label="Instagram"
+              >
                 <Instagram size={20} />
               </Link>
               <Link href="#" aria-label="Email">
                 <Mail size={20} />
               </Link>
-              <Link href="https://www.linkedin.com/company/aerotec-ist/" aria-label="LinkedIn">
+              <Link
+                href="https://www.linkedin.com/company/aerotec-ist/"
+                aria-label="LinkedIn"
+              >
                 <Linkedin size={20} />
               </Link>
-              <Link href="https://www.youtube.com/channel/UCrTrDSNaMf44AtJlgar5Agw" aria-label="YouTube">
+              <Link
+                href="https://www.youtube.com/channel/UCrTrDSNaMf44AtJlgar5Agw"
+                aria-label="YouTube"
+              >
                 <Youtube size={20} />
               </Link>
               <button aria-label="Toggle theme">
@@ -241,3 +296,5 @@ export default function Navbar() {
     </header>
   );
 }
+
+

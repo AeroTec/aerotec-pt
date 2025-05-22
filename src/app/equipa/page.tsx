@@ -3,9 +3,10 @@ import { leadership, fiscalCouncil, generalAssemblyBoard } from "../../component
 import TeamMemberCard from "../../components/teamMemberCard";
 import Navbar from "../../components/navbar";
 
-function renderSection(title: string, members: any[], bgColor: string) {
+function renderSection(title: string, members: any[], bgColor: string, id: string) {
   return (
     <section 
+    id = {id}
     className="py-16 px-6 md:px-12 lg:px-24"
     style={{ backgroundColor: bgColor }}
     >
@@ -27,6 +28,7 @@ export default function TeamPage() {
         {/* Imagem de capa com título */}
         <section className="relative w-full h-[400px]">
           <Image
+            id="top-image"
             src="/images/aerotec-team/800x800-placeholder.png"
             alt="Equipa AeroTéc"
             layout="fill"
@@ -42,9 +44,9 @@ export default function TeamPage() {
         </section>
 
         {/* As secções da equipa */}
-        {renderSection("Direção", leadership, "rgb(8,20,52)")}
-        {renderSection("Conselho Fiscal", fiscalCouncil, "rgb(40,36,36)")}
-        {renderSection("Mesa da Assembleia Geral", generalAssemblyBoard, "rgb(8,20,52)")}
+        {renderSection("Direção", leadership, "rgb(8,20,52)", "direcao")}
+        {renderSection("Conselho Fiscal", fiscalCouncil, "rgb(40,36,36)", "conselho-fiscal")}
+        {renderSection("Mesa da Assembleia Geral", generalAssemblyBoard, "rgb(8,20,52)", "mesa-assembleia-geral")}
       </main>
     </>
   );

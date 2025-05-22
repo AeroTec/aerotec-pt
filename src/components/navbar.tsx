@@ -24,7 +24,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/aerotec_globo.png"
+              src="/images/aerotec_globo.png"
               alt="AeroTéc Logo"
               width={40}
               height={40}

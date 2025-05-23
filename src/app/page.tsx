@@ -16,7 +16,7 @@ export default function Home() {
               <div className="md:order-2 flex-shrink-0">
                 <div className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-full overflow-hidden">
                   <Image
-                    src="/mariana_carvalho.png"
+                    src="/images/mariana_carvalho.png"
                     alt="Presidente"
                     width={160}
                     height={160}

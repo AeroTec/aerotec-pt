@@ -68,7 +68,7 @@ export default function EquipasPage() {
   ]
 
   return (
-    <main>
+    <main>  
       <Navbar />
 
       {/* Secção da fotografia da equipa */}
@@ -103,11 +103,9 @@ export default function EquipasPage() {
               />
             ))}
           </div>
-        </div>
-      </section>
+        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+            <h1 className="text-4xl font-bold mb-8 text-center text-white">DIREÇÃO</h1>
 
-      {/* Secção 2 - Conselho Fiscal */}
-      <section className="bg-[#282424] text-white py-16">
         <div className="container mx-auto px-4 md:px-6 max-w-6xl">
           <h2 className="text-4xl mb-12 text-center text-white font-bold">CONSELHO FISCAL</h2>
 
@@ -122,9 +120,7 @@ export default function EquipasPage() {
                 linkedin={member.linkedin}
               />
             ))}
-          </div>
-        </div>
-      </section>
+          </div
 
       {/* Secção 3 - Mesa */}
       <section className="bg-[#001333] text-white py-16">
@@ -143,6 +139,9 @@ export default function EquipasPage() {
               />
             ))}
           </div>
+      <section className="bg-[#001333] text-gray-800 py-16">
+        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+            <h2 className="text-4xl font-bold mb-8 text-center text-white">MESA</h2>
         </div>
       </section>
 

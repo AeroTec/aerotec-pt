@@ -16,7 +16,7 @@ export default function Home() {
               <div className="md:order-2 flex-shrink-0">
                 <div className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-full overflow-hidden">
                   <Image
-                    src="/placeholder.svg?height=160&width=160"
+                    src="/mariana_carvalho.png"
                     alt="Presidente"
                     width={160}
                     height={160}
@@ -26,26 +26,26 @@ export default function Home() {
               </div>
 
               <div className="md:order-1 space-y-4">
-                <p>
+                <p style={{ textAlign: "justify" }}>
                   O AeroTéc, fundado em 2015, mas com uma história profunda, sempre teve como principal aspeto da sua
                   doutrina a sua versatilidade e dinamismo, de modo a melhorar sempre, e demonstrar excelência nos
                   desafios enfrentados e, acima de tudo, em cada detalhe do trabalho realizado.
                 </p>
 
-                <p>
+                <p style={{ textAlign: "justify" }}>
                   Ao longo da vida estudantil dos nossos membros, o AeroTéc tem como principal objetivo representar um
                   espaço de partilha, que nos permite crescer e evoluir como futuros engenheiros e, acima de tudo, como
                   pessoas.
                 </p>
 
-                <p>
+                <p style={{ textAlign: "justify" }}>
                   Tal acontece através do trabalho exímio dos nossos 9 projetos, que nos dão a chance de aplicarmos
                   tanto conhecimentos teóricos ensinados nos cursos à qual envergamos, como também adquirirmos uma
                   plétora de outras capacidades cruciais no mercado de trabalho: trabalho em equipa, contacto com o
                   mundo empresarial,...
                 </p>
 
-                <p>
+                <p style={{ textAlign: "justify" }}>
                   Apesar destes objetivos e aspetos diversos que desenvolvemos, o AeroTéc nutre sempre a coesão no
                   trabalho desenvolvido, procurando fornecer a cada um dos nossos membros um espaço de partilha
                   positivo, em que cada um de nós possa aprender e se desenvolver enquanto indivíduos ao máximo!

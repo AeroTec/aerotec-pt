@@ -20,13 +20,13 @@ export default function EquipasPage() {
     {
       name: "Ana Santos",
       role: "Secretária",
-      photoUrl: "/placeholder.svg?height=128&width=128",
+      photoUrl: "/images/mariana_carvalho.png",
       linkedin: "https://linkedin.com/in/exemplo3",
     },
     {
       name: "Pedro Costa",
       role: "Tesoureiro",
-      photoUrl: "/placeholder.svg?height=128&width=128",
+      photoUrl: "/images/mariana_carvalho.png",
       linkedin: "https://linkedin.com/in/exemplo4",
     },
   ]
@@ -41,7 +41,7 @@ export default function EquipasPage() {
     {
       name: "Carlos Ferreira",
       role: "Vogal",
-      photoUrl: "/images/mariana_carvalho.png",
+      photoUrl: "/placeholder.svg?height=128&width=128",
       linkedin: "https://linkedin.com/in/exemplo6",
     },
   ]
@@ -82,17 +82,17 @@ export default function EquipasPage() {
 
         {/* Texto sobre a imagem */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-white text-5xl font-bold">EQUIPA</h1>
+          <h1 className="text-white text-5xl">Equipa</h1>
         </div>
       </section>
 
       {/* Secção 1 - Direção */}
-      <section className="bg-[#001333] text-white py-16">
+      <section className="bg-[#001333] text-white py-24">
         <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-          <h1 className="text-4xl mb-12 text-center text-white font-bold">DIREÇÃO</h1>
+          <h1 className="text-4xl mt-[-2rem] mb-16 text-center text-white">Direção</h1>
 
           {/* Grid de member cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
             {direcaoMembers.map((member, index) => (
               <MemberCard
                 key={index}
@@ -107,9 +107,9 @@ export default function EquipasPage() {
       </section>
 
       {/* Secção 2 - Conselho Fiscal */}
-      <section className="bg-[#282424] text-white py-16">
+      <section className="bg-[#282424] text-white py-24">
         <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-          <h2 className="text-4xl mb-12 text-center text-white font-bold">CONSELHO FISCAL</h2>
+          <h2 className="text-4xl mt-[-2rem] mb-16 text-center text-white">Conselho Fiscal</h2>
 
           {/* Grid de member cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
@@ -127,9 +127,9 @@ export default function EquipasPage() {
       </section>
 
       {/* Secção 3 - Mesa */}
-      <section className="bg-[#001333] text-white py-16">
+      <section className="bg-[#001333] text-white py-24">
         <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-          <h2 className="text-4xl mb-12 text-center text-white font-bold">MESA</h2>
+          <h2 className="text-4xl mt-[-2rem] mb-16 text-center text-white">Mesa da Assembleia Geral</h2>
 
           {/* Grid de member cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">

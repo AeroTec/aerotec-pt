@@ -69,10 +69,10 @@ export default function EquipasPage() {
 
   return (
     <main>
-      <Navbar />
+      <Navbar transparent={true} />
 
       {/* Secção da fotografia da equipa */}
-      <section className="w-full h-80 relative pt-16">
+      <section className="w-full h-80 relative data-hero">
         {/* Imagem de fundo */}
         <img
           src="/images/800x800-placeholder.png"
@@ -103,6 +103,7 @@ export default function EquipasPage() {
               />
             ))}
           </div>
+        </div>
       </section>
 
       {/* Secção 2 - Conselho Fiscal */}
@@ -122,6 +123,7 @@ export default function EquipasPage() {
               />
             ))}
           </div>
+        </div>
       </section>
 
       {/* Secção 3 - Mesa */}
@@ -141,8 +143,8 @@ export default function EquipasPage() {
               />
             ))}
           </div>
+        </div>
       </section>
-
       <Footer />
     </main>
   )

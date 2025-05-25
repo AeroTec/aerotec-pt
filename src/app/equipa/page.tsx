@@ -103,6 +103,7 @@ export default function EquipasPage() {
               />
             ))}
           </div>
+        </div>
       </section>
 
       {/* Secção 2 - Conselho Fiscal */}
@@ -122,6 +123,7 @@ export default function EquipasPage() {
               />
             ))}
           </div>
+        </div>
       </section>
 
       {/* Secção 3 - Mesa */}
@@ -141,8 +143,10 @@ export default function EquipasPage() {
               />
             ))}
           </div>
+        </div>
       </section>
       <Footer />
     </main>
   )
 }
+

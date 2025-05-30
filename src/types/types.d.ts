@@ -6,6 +6,12 @@ declare global {
       email?: string
       linkedin?: string
     }
+
+    interface ProjectLogo {
+      name: string
+      logo: string
+      link: string
+    }
   }
   
   export {}

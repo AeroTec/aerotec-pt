@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import MemberCard from "@/components/member-card"
+import ProjectLogo from "@/components/project-logo"
 
 export default function EquipasPage() {
   // Dados de exemplo para teste
@@ -67,12 +68,60 @@ export default function EquipasPage() {
     },
   ]
 
+  const projects = [
+    {
+      name: "ACE Pilot",
+      logo: "/images/acep_contorno.png",
+      link: "/ACE-Pilot"
+    },
+    {
+      name: "ATLAS",
+      logo: "/images/acep_contorno.png",
+      link: "/ATLAS"
+    },
+    {
+      name: "BLUE",
+      logo: "/images/acep_contorno.png",
+      link: "/blue"
+    },
+    {
+      name: "C.I.A",
+      logo: "/images/acep_contorno.png",
+      link: "/cia"
+    },
+    {
+      name: "RED",
+      logo: "/images/acep_contorno.png",
+      link: "/red"
+    },
+    {
+      name: "Revista Aeroespacial",
+      logo: "/images/acep_contorno.png",
+      link: "/revista"
+    },
+    {
+      name: "Semana Aeroespacial",
+      logo: "/images/acep_contorno.png",
+      link: "/semana"
+    },
+    {
+      name: "WebDev",
+      logo: "/images/acep_contorno.png",
+      link: "/webdev"
+    },
+    {
+      name: "Workshop Rockets",
+      logo: "/images/acep_contorno.png",
+      link: "/workshopRockets"
+    },
+  ]
+
   return (
     <main>
       <Navbar transparent={true} />
 
       {/* Secção da fotografia da equipa */}
-      <section className="w-full h-80 relative data-hero">
+      <section className="w-full h-120 relative data-hero">
         {/* Imagem de fundo */}
         <img
           src="/images/800x800-placeholder.png"
@@ -145,6 +194,28 @@ export default function EquipasPage() {
           </div>
         </div>
       </section>
+
+      {/* Secção - Outros membros */}
+      <section className="bg-[#1a1a1a] text-white py-24">
+        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+          <h2 className="text-4xl mt-[-2rem] text-center text-white mb-3">Outros Membros</h2>
+           <div className="mx-auto w-24 h-1 bg-white rounded mb-10"></div>
+            <p className= "text-center text-white text-xl font-mono mb-10">Gostavas de saber mais sobre a nossa equipa? Dá um salto às páginas dos nossos projetos!</p>
+
+          <div className="flex flex-wrap justify-center gap-8">
+          {projects.map((project, index) => (
+            <ProjectLogo
+              key={index}
+              name={project.name}
+              logo={project.logo}
+              link={project.link}
+            />
+          ))}
+
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </main>
   )
